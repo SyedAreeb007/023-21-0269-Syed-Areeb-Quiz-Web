@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, rgb(34, 33, 33), rgb(216, 209, 210));
+    margin: 0;
+    padding: 0;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Ensure no overflow from the background */
+    z-index: -1;
+}
+
+.background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../Assets/Images/background.jpg') no-repeat center center fixed; /* Use background image */
+    background-size: cover; /* Cover the entire viewport */
+    filter: blur(5px); /* Apply blur effect */
+    z-index: -1;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.logo {
+    margin-left: 40%;
+    top: 20px;
+    width: 100px;
+    z-index: 10;
+}
+
+.survey-form {
+    margin: 2rem 0;
+    padding: 2rem;
+    background: rgb(248, 247, 247);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.survey-form:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.form-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #e4cd00;
+    text-shadow:
+        -1px -1px 0 #333,
+        1px -1px 0 #333,
+        -1px 1px 0 #333,
+        1px 1px 0 #333;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    padding: 10px;
+    border: 2px solid #333; /* Outline around each question and its options */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f3eded; /* Default background color inside the stroke */
+}
+
+.form-group:nth-child(odd) {
+    background-color: #eceef1; /* Different color for odd form groups */
+}
+
+.form-group:nth-child(even) {
+    background-color: #eceef1; /* Different color for even form groups */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.form-group .question {
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.form-group .form-check {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.form-group .form-check:hover {
+    transform: translateX(10px);
+}
+
+.form-group .form-check-input {
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+.form-group .form-check-label {
+    cursor: pointer;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-primary {
+    background-color: #eceef1;
+    border: none;
+    color: black;
+}
+
+.btn-primary:hover {
+    background-color: #d7dde6;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+    background-color: #eceef1;
+    border: none;
+    color: black;
+}
+
+.btn-secondary:hover {
+    background-color: #d7dde6;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation keyframes */
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
